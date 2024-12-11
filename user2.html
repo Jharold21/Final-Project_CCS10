@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> James Andrei Sarno Portfolio</title>
+    <link rel="stylesheet" href="index.html">
+   <style>
+@import url('http://fonts.googleapis.com/css2?family=Poopins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poopins', sans-serif;
+}
+
+:root {
+    --bg-color: #21160d;
+    --second-bg-color: #4e3200;
+    --text-color: #ededed;
+    --main-color: #bd8800;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 4rem 12% 4rem;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+header.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: .3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.home-content h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 1.5rem;
+}
+
+.home-content h3 {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 3.5rem;
+    -webkit-text-stroke: .7px var(--main-color);
+    color: transparent;
+    background-image: linear-gradient(var(--main-color), var(--main-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: homeBgText 6s linear infinite;
+    animation-delay: 1s;
+    position: relative;
+}
+
+.home-content h3::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 2px solid var(--main-color);
+    animation: homeCursorText 6s linear infinite;
+    animation-delay: 1s;
+    z-index: 1;
+}
+
+@keyframes homeBgText {
+    0%, 10%, 100% {
+        background-position: -33rem 0;
+    }
+
+    65%, 85% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes homeCursorText {
+    0%, 10%, 100% {
+        width: 0;
+    }
+
+    65%, 85% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    75%, 81% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    header {
+        padding: 2rem 4%;
+    }
+
+    section {
+        padding: 10rem 4% 2em;
+    }
+
+    .home {
+        padding: 0 4%;
+    }
+
+    .footer {
+        padding: 2rem 4%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 3rem;
+        padding: 0 2rem; 
+    }
+
+    .logo {
+        font-size: 3rem; 
+        margin-bottom: 2rem; 
+    }
+
+    .home-content {
+        text-align: center;
+        margin-top: 0; 
+    }
+
+    .home-content h1 {
+        font-size: 4rem; 
+    }
+
+    .home-content h3 {
+        font-size: 2.5rem; 
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--bg-color);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        transition: .25s ease;
+    }
+
+    .navbar.active {
+        left: 0;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .navbar .active {
+        left: 0;
+        transition-delay: 0s;
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.home-logo {
+    border-radius: 50%;
+}
+
+.home-logo img{
+    position: relative;
+    top: 3rem;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.home-logo img:hover{
+    box-shadow: 0 0 25px var(--main-color),
+    0 0 50px var(--main-color),
+    0 0 100px var(--main-color);
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    font-weight: 500;
+    max-width: 1000px;
+    line-height: 1.4;
+}
+
+.home-social {
+    padding-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.home-social a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--main-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: color 0.5s ease;
+    box-shadow: 0 0 10px 0 rgba(166, 137, 8, 0.5);
+}
+
+.home-social a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;  
+    width: 100%;
+    height: 100%;
+    background: var(--main-color);
+    z-index: -1; 
+    transition: left 0.5s ease; 
+}
+
+.home-social a:hover {
+    color: var(--bg-color);  
+    box-shadow: 0 0 15px 5px rgba(138, 119, 11, 0.8);
+  
+}
+
+.home-social a:hover::before {
+    left: 0;  
+}
+
+
+.btn-box {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem; 
+}
+
+.btn-box .btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 5rem;
+    background: var(--main-color);
+    border: .2rem solid var(--main-color);
+    border-radius: .8rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    color: var(--bg-color);
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+    box-shadow: 0 0 10px 0 rgba(166, 137, 8, 0.5);
+}
+
+.btn-box .btn:hover {
+    color: var(--main-color);
+    box-shadow: 0 0 15px 5px rgba(166, 137, 8, 0.5);
+}
+
+.btn-box .btn:nth-child(2) {
+    background: transparent;
+    color: var(--main-color);
+}
+
+.btn-box .btn:nth-child(2):hover {
+    color: var(--bg-color);
+}
+
+.btn-box .btn:nth-child(2)::before {
+    background: var(--main-color);
+}
+
+.btn-box .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+    transition: left 0.5s ease;
+}
+
+.btn-box .btn:hover::before {
+    left: 0;
+}
+
+/* ====================================================================================================== */
+/* Breakpoint */
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--second-bg-color);
+    padding: 8rem 2rem;
+    gap: 6rem;
+}
+
+.heading {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.aboutside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16rem; 
+    width: 100%;
+    flex-wrap: wrap; 
+}
+
+.about-img {
+    position: relative;
+    width: 36rem; 
+    height: 36rem;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-bottom: 2rem; 
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: .2rem solid var(--main-color);
+}
+
+.circle-spin {
+    position: absolute;
+    transform: translate(-50%, -50%); 
+    width: 42rem; 
+    height: 42rem; 
+    border-radius: 50%;
+    border-top: .2rem solid var(--second-bg-color);
+    border-bottom: .2rem solid var(--second-bg-color);
+    border-left: .2rem solid var(--main-color);
+    border-right: .2rem solid var(--main-color);
+    animation: spin 3s linear infinite; 
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) translate(-50%, -50%);
+    }
+    100% {
+        transform: rotate(360deg) translate(-50%, -50%);
+    }
+}
+
+.about-content {
+    flex: 1;
+    max-width: 600px; 
+    text-align: left;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 3rem;
+    }
+
+    .aboutside {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem; 
+    }
+
+    .about-img {
+        width: 28rem;
+        height: 28rem;
+    }
+
+    .circle-spin {
+        width: 32rem; 
+        height: 32rem;
+    }
+
+    .about-content {
+        font-size: 1.4rem;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .aboutside {
+        gap: 2rem;
+    }
+
+    .about-img {
+        width: 24rem;
+        height: 24rem;
+    }
+
+    .circle-spin {
+        width: 28rem;
+        height: 28rem;
+    }
+
+    .about-content {
+        font-size: 1.2rem;
+    }
+}
+
+/* ====================================================================================================== */
+/* Breakpoint */
+
+.education {
+    padding: 100px 15px;
+    background-color: var(--bg-color);
+}
+
+.education h2 {
+    margin-bottom: 5rem;
+    text-align: center;
+    font-size: 3rem;
+    color: var(--text-color);
+}
+
+
+.timeline-educs {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.timeline-educs::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: var(--text-color);
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 0;
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item:nth-child(odd) {
+    padding-right: calc(50% + 30px);
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    padding-left: calc(50% + 30px);
+}
+
+.timeline-dot {
+    height: 21px;
+    width: 21px;
+    background-color: var(--main-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
+    top: 10px;
+}
+
+.timeline-date {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    margin: 6px 0 15px;
+}
+
+.timeline-content {
+    background-color: var(--bg-color);
+    border: 3px solid var(--main-color);
+    padding: 30px 50px;
+    border-radius: 4rem;
+    box-shadow: 0 0 10px var(--main-color);
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+.timeline-content:hover {
+    background: var(--main-color);
+    color: var(--bg-color); 
+    box-shadow: 0 0 15px 5px rgba(166, 137, 8, 0.5);
+}
+
+.timeline-content h3 {
+    font-size: 20px;
+    margin: 0 0 10px;
+    font-weight: 800;
+}
+
+.timeline-content p {
+    font-size: 13px;
+    font-weight: 180;
+    line-height: 16px;
+}
+
+.timeline-content h5 {
+    font-size: 18px;
+    margin: 0 0 10px;
+    font-weight: 500;
+}
+
+
+.timeline-item .timeline-date {
+    position: relative;
+    top: -12px; 
+}
+
+
+
+@media (max-width: 768px) {
+    .education h2 {
+        font-size: 2.5rem;
+    }
+
+    .timeline-educs {
+        flex-direction: column;
+    }
+
+    .timeline-item:nth-child(odd), .timeline-item:nth-child(even) {
+        padding-right: 0;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .timeline-content {
+        padding: 20px 30px;
+        font-size: 1.4rem; 
+    }
+
+    .timeline-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .timeline-date {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .education h2 {
+        font-size: 2rem;
+    }
+
+    .timeline-educs {
+        padding: 0 10px; 
+    }
+
+    .timeline-item {
+        margin-bottom: 30px; 
+    }
+
+    .timeline-content {
+        padding: 15px 25px;
+        font-size: 1.2rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .timeline-date {
+        font-size: 1.4rem;
+    }
+
+    .timeline-dot {
+        height: 18px;
+        width: 18px;
+    }
+}
+
+/* ====================================================================================================== */
+/* Breakpoint */
+
+.skill{
+    min-height: auto;
+    padding-bottom: 7rem;
+    background: var(--second-bg-color);
+}
+
+.skill .skills-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.skills-row .skills-column{
+    flex: 1 1 40rem;
+}
+
+.skills-column .title {
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem;
+    padding-top: 10rem;
+}
+
+.skills-box .skills-content{
+    position: relative;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    padding: .5rem 1.5rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.skills-box .skills-content::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.skills-box .skills-content:hover::before{
+    width: 100%;
+}
+
+.skills-content .progress{
+    padding: 1rem 0;
+}
+
+.skills-content .progress h3{
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills-content .progress h3 span{
+    color: var(--text-color);
+}
+
+.skills-content .progress .bar{
+    height: 2.5rem;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+    padding: .5rem;
+    margin: 1rem 0;
+}
+
+.skills-content .progress .bar span{
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: var(--main-color);
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span{
+    width: 96%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span{
+    width: 80%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span{
+    width: 50%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span{
+    width: 95%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span{
+    width: 90%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span{
+    width: 30%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span{
+    width: 60%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span{
+    width: 80%;
+}
+
+
+@media (max-width: 768px) {
+    .skills-row {
+        flex-direction: column;
+        gap: 2rem; 
+    }
+
+    .skills-column .title {
+        font-size: 2rem; 
+        padding-top: 5rem; 
+    }
+
+    .skills-content .progress h3 {
+        font-size: 1.5rem; 
+    }
+
+    .skills-content .progress .bar {
+        height: 2rem; 
+    }
+
+    .skills-content .progress .bar span {
+        height: 100%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .skills-column .title {
+        font-size: 1.8rem; 
+        padding-top: 4rem; 
+    }
+
+    .skills-content .progress h3 {
+        font-size: 1.4rem; 
+    }
+
+    .skills-content .progress .bar {
+        height: 1.8rem; 
+    }
+}
+
+/* ====================================================================================================== */
+/* Breakpoint */
+
+.experience {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 10rem;
+    background: var(--second-bg-color);
+}
+
+.experience1 {
+    padding-top: 10rem;
+}
+
+.experience-box {
+    position: relative;
+    padding-left: 3rem;
+    border-left: .3rem solid var(--text-color);
+}
+
+.experience-content {
+    position: relative;
+    padding: 1.5rem;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 5px 2px rgba(166, 137, 8, 0.5);
+    transition: all 0.3s ease; 
+}
+
+.experience-content:hover {
+    background-color: var(--main-color);
+    color: var(--bg-color); 
+    box-shadow: 0 0 15px 5px rgba(166, 137, 8, 0.5); 
+}
+
+.experience-content .year {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    padding-bottom: .5rem;
+    position: relative;
+    transition: color 0.3s ease; 
+}
+
+.experience-content .year i {
+    padding-right: .5rem;
+}
+
+
+.experience-content .year::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -5.8rem; 
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    transform: translateY(-50%); 
+    box-shadow: 0 0 15px 5px rgba(166, 137, 8, 0.5);
+    z-index: 2;
+    transition: background-color 0.3s ease; 
+}
+
+.experience-content:hover .year {
+    color: var(--bg-color); 
+}
+
+.experience-content:hover .year::before {
+    background-color: var(--bg-color); 
+}
+
+.experience-content h3 {
+    font-size: 2rem;
+}
+
+.experience-content p {
+    font-size: 1.6rem;
+    padding-top: .7rem;
+}
+
+/* ====================================================================================================== */
+/* Breakpoint */
+
+.gallery, .gallery2 {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .interest-content {
+    padding-top: 45px;
+    text-align: center;
+    font-size: 3.5rem;
+  }
+
+  .interest-content2 {
+    padding-top: 80px;
+    text-align: center;
+    font-size: 3.5rem;
+    color: var(--main-color);
+  }
+
+  .gallery-container, .gallery2-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 320px;
+    margin: 0 auto;
+    max-width: 1200px;
+    position: relative;
+  }
+  
+  .gallery-item, .gallery2-item {
+    height: 200px;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    width: 330px;
+    z-index: 0;
+    border-radius: 15px;
+    background-size: contain;
+    border: 3px solid transparent;
+    object-fit: cover; 
+  }
+  
+  
+  .gallery-item-1 {
+    left: 15%;
+    opacity: 0.4;
+    transform: translateX(-50%);
+    filter: blur(3px); 
+    z-index: 1;
+    border-color: rgba(166, 137, 8, 0.5);
+  }
+  
+  .gallery-item-2 {
+    left: 30%;
+    opacity: 0.6;
+    transform: translateX(-50%);
+    filter: blur(2px); 
+    z-index: 2;
+    border-color: rgba(166, 137, 8, 0.5);
+  }
+  
+  .gallery-item-3 {
+    box-shadow: -2px 5px 33px 6px rgba(166, 137, 8, 0.5);
+    height: 300px;
+    left: 50%;
+    opacity: 1;
+    transform: translateX(-50%);
+    width: 430px;
+    z-index: 3;
+    border-color: rgb(166, 137, 8, 0.5); 
+    filter: none; 
+  }
+  
+  .gallery-item-4 {
+    left: 70%;
+    opacity: 0.6;
+    transform: translateX(-50%);
+    filter: blur(2px); 
+    z-index: 2;
+    border-color: rgba(166, 137, 8, 0.5);
+  }
+  
+  .gallery-item-5 {
+    left: 85%;
+    opacity: 0.4;
+    transform: translateX(-50%);
+    filter: blur(3px); 
+    z-index: 1;
+    border-color: rgba(166, 137, 8, 0.5); 
+  }
+  
+  
+  .gallery2-item-1 {
+    left: 15%;
+    opacity: 0.4;
+    transform: translateX(-50%);
+    filter: blur(3px);
+    z-index: 1;
+    border-color: rgba(166, 137, 8, 0.5); 
+  }
+  
+  .gallery2-item-2 {
+    left: 30%;
+    opacity: 0.6;
+    transform: translateX(-50%);
+    filter: blur(2px); 
+    z-index: 2;
+    border-color: rgba(166, 137, 8, 0.5);
+  }
+  
+  .gallery2-item-3 {
+    box-shadow: -2px 5px 33px 6px rgba(166, 137, 8, 0.5);
+    height: 300px;
+    left: 50%;
+    opacity: 1;
+    transform: translateX(-50%);
+    width: 430px;
+    z-index: 3;
+    border-color: rgb(166, 137, 8, 0.5); 
+    filter: none; 
+  }
+  
+  .gallery2-item-4 {
+    left: 70%;
+    opacity: 0.6;
+    transform: translateX(-50%);
+    filter: blur(2px); 
+    z-index: 2;
+    border-color: rgba(166, 137, 8, 0.5);
+  }
+  
+  .gallery2-item-5 {
+    left: 85%;
+    opacity: 0.4;
+    transform: translateX(-50%);
+    filter: blur(3px); 
+    z-index: 1;
+    border-color: rgba(166, 137, 8, 0.5); 
+  }
+  
+  
+  .gallery-controls, .gallery2-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .gallery-controls button {
+    background-color: var(--main-color);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+
+  .gallery2-controls button {
+    background-color: var(--bg-color);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+
+  
+.gallery-controls button:hover {
+    background-color: var(--bg-color);
+    
+  }
+
+.gallery2-controls button:hover {
+    background-color: var(--main-color);
+  }
+
+
+
+@media (max-width: 480px) {
+    .gallery-container, .gallery2-container {
+        height: 250px; 
+    }
+
+    .gallery-item, .gallery2-item {
+        width: 250px; 
+        height: 150px; 
+    }
+
+    .gallery-item-1, .gallery-item-2, .gallery-item-4, .gallery-item-5,
+    .gallery2-item-1, .gallery2-item-2, .gallery2-item-4, .gallery2-item-5 {
+        opacity: 0.5;
+        filter: blur(2px); 
+    }
+
+    .gallery-item-3, .gallery2-item-3 {
+        height: 200px;
+        width: 300px;
+        opacity: 1;
+        filter: none; 
+    }
+
+    .gallery-controls, .gallery2-controls {
+        flex-direction: column; 
+        margin-top: 15px;
+    }
+
+    .gallery-controls button, .gallery2-controls button {
+        font-size: 14px; 
+        margin-bottom: 10px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .gallery-container, .gallery2-container {
+        height: 280px; 
+    }
+
+    .gallery-item, .gallery2-item {
+        width: 280px; 
+        height: 180px; 
+    }
+
+    .gallery-controls, .gallery2-controls {
+        flex-direction: row; 
+    }
+
+    .gallery-controls button, .gallery2-controls button {
+        font-size: 15px; 
+    }
+}
+
+/* ====================================================================================================== */
+/* Breakpoint */
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--second-bg-color);
+    padding: 8rem 2rem;
+    gap: 6rem;
+}
+
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--second-bg-color);
+    padding: 8rem 2rem;
+    gap: 6rem;
+}
+
+
+.contact-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16rem; 
+    width: 100%;
+}
+
+
+.contact-logo {
+    position: relative;
+    font-size: 14px;
+    width: 36rem; 
+    height: 36rem; 
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+.contact form .input-field {
+    position: relative;
+    width: 49%;
+    margin: .8rem 0;
+}
+
+.contact form .input-field input {
+    width: 460px; 
+    padding: 1.5rem;
+    font-size: 1.6rem; 
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color); 
+    height: 60px; 
+}
+
+.contact form .input-field textarea {
+    width: 460px; 
+    padding: 1.5rem;
+    font-size: 1.6rem; 
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color); 
+    height: 220px; 
+}
+
+
+.input-field button {
+    width: 160px; 
+    font-size: 1.6rem; 
+    height: 40px; 
+    color: var(--bg-color);
+    background: var(--main-color);
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color); 
+}
+
+.input-field button:hover {
+    color: var(--main-color);
+    background: var(--second-bg-color);
+    box-shadow: 0 0 8px 4px rgba(166, 137, 8, 0.5);
+}
+
+.contact form .input-field input::placeholder,
+.contact form .input-field textarea::placeholder {
+    color: white;
+}
+
+
+@media (max-width: 480px) {
+    .contact {
+        padding: 4rem 2rem; 
+    }
+
+    .contact-div {
+        flex-direction: column; 
+        gap: 3rem; 
+    }
+
+    .contact-logo {
+        width: 20rem; 
+        height: 20rem; 
+    }
+
+    .contact form .input-field {
+        width: 100%; 
+        margin: 1rem 0;
+    }
+
+    .contact form .input-field input {
+        width: 100%; 
+        font-size: 1.5rem; 
+        padding: 1.8rem; 
+        height: 40px; 
+        border: .3rem solid var(--main-color); 
+        margin-bottom: 1.2rem;
+    }
+
+    .contact form .input-field textarea{
+        width: 100%; 
+        font-size: 1.5rem; 
+        padding: 1.8rem; 
+        height: 220px; 
+        border: .3rem solid var(--main-color); 
+        margin-bottom: 1.2rem;
+    }
+
+    .input-field button {
+        width: 50%; 
+        font-size: 1.8rem; 
+        height: 30px; 
+        border: .3rem solid var(--main-color); 
+        margin-top: 1rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .contact {
+        padding: 6rem 2rem; 
+    }
+
+    .contact-div {
+        gap: 6rem; 
+    }
+
+    .contact-logo {
+        width: 30rem; 
+        height: 30rem; 
+    }
+
+    .contact form .input-field {
+        width: 100%; 
+        margin: 1rem 0;
+    }
+
+    .contact form .input-field input {
+        width: 100%; 
+        font-size: 1.5rem; 
+        padding: 1.8rem; 
+        height: 40px; 
+        border: .3rem solid var(--main-color); 
+        margin-bottom: 1.2rem;
+    }
+
+    .contact form .input-field textarea{
+        width: 100%; 
+        font-size: 1.5rem; 
+        padding: 1.8rem; 
+        height: 220px; 
+        border: .3rem solid var(--main-color); 
+        margin-bottom: 1.2rem;
+    }
+
+
+    .input-field button {
+        width: 50%; 
+        font-size: 1.8rem; 
+        height: 30px; 
+        border: .3rem solid var(--main-color); 
+        margin-top: 1rem;
+    }
+}
+
+/* ====================================================================================================== */
+/* Breakpoint */
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: var(--bg-color);
+}
+
+
+.footer .social {
+    text-align: center;
+    padding-bottom: 25px;
+    color: var(--main-color);
+}
+
+.footer .social a {
+    font-size: 25px;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.footer .social a:hover {
+    transform: scale(1.2) translateY(-10px);
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.footer ul li a {
+    color: var(--text-color);
+    border-bottom: 1px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+
+.footer ul li a:hover {
+    border-bottom: 3px solid var(--main-color);
+}
+
+.footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+
+.footer .copyright {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+
+@media (max-width: 480px) {
+    .footer .social a {
+        font-size: 20px; 
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .footer .social a:hover {
+        transform: scale(1.1) translateY(-5px);
+    }
+
+    .footer ul {
+        font-size: 16px; 
+    }
+
+    .footer ul li {
+        padding: 0 10px; 
+    }
+
+    .footer .copyright {
+        font-size: 14px; 
+    }
+}
+
+
+@media (max-width: 768px) {
+    .footer .social a {
+        font-size: 22px; 
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .footer ul li {
+        padding: 0 12px; 
+    }
+
+    .footer .copyright {
+        font-size: 15px; 
+    }
+}
+
+
+   </style>
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+<!-- header -->
+<header class="header">
+    <a href="#" class="logo">James Andrei Sarno</a>
+
+    <div class="bx bx-menu" id="menu-icon"></div>
+
+    <nav class="navbar">
+        <a href="index.html">User Account</a>
+        <a href="#Home" class="active">Home</a>
+        <a href="#About">About</a>
+        <a href="#Education">Education</a>
+        <a href="#Skills">Skills</a>
+        <a href="#Experience">Experience</a>
+        <a href="#Interest">Interest</a>
+        <a href="#Contact">Contact</a>
+
+    </nav>
+</header>
+
+<!-- home page section design-->
+<section class="home" id ="Home">
+<div class ="home-content">
+    <h1> Hi, It's <span>James Andrei Sarno</span></h1>
+    <h3 class="text-animate">BSIT Student of AUF</h3>
+    
+    <p> This web site is a reflection of my journey, creativity, and dedication I bring to every project.
+        Take your time to explore my portfolio and get to know my style, vision, and capabilities.
+        I’m always eager to connect with like-minded individuals and collaborate on exciting new projects and also 
+        I strive to create work that is not only functional but also meaningful and inspiring. <br><br>
+        Let’s create something extraordinary together—reach out anytime!
+    </p>
+
+    <div class="home-social">
+    <a href="https://www.facebook.com/profile.php?id=100092584627792"><i class='bx bxl-facebook'></i></a>
+    <a href="https://www.instagram.com/eternalmatrix01/"><i class='bx bxl-instagram'></i></a>
+    <a href="Wa.me/9565231702"><i class='bx bxl-whatsapp' ></i></a>
+    <a href="https://discord.gg/qhFWnrJx"><i class='bx bxl-discord'></i></a>
+    <a href="t.me/Jiyon2403"><i class='bx bxl-telegram'></i></a>
+</div>
+
+
+    <div class ="btn-box">
+        <a href="#Contact" class="btn">Hire Me</a>
+        <a href="https://www.facebook.com/messages/t/100092584627792" class="btn">Let's Talk</a>
+    </div>
+</div>
+    <div class="home-logo">
+        <img src="logo.jpg" alt="">
+    </div>
+</section>
+
+
+<!-- about section design -->
+<section class="about" id="About" >
+<h2 class="heading"> About <span> Me </span></h2>
+
+<div class="aboutside">
+<div class="about-img">
+    <img src="sarno.jpg" alt="">
+    <span class="circle-spin"> </span>
+</div>
+
+<div class="about-content">
+    <p> Hi there! I'm James Andrei Sarno, an IT enthusiast, gamer, and fitness lover. My life is a blend of technology, gaming, and personal growth, and I strive to balance my passions while pushing my limits.
+
+        I’ve always had a deep interest in technology and problem-solving. As a student of Information Technology, I’ve honed my skills in coding, networking, web development, and database management. From creating websites to working on Java programs, I’m passionate about developing solutions that not only work efficiently but also innovate and inspire.
+
+       <br><br> Gaming is more than just a hobby—it’s a way for me to relax and challenge myself. I’ve spent countless hours exploring virtual worlds, conquering challenges, and learning new strategies. Whether I’m playing multiplayer online games, diving into role-playing games, or simply enjoying the thrill of a fast-paced action game, gaming sharpens my problem-solving skills and lets me unwind from daily stresses.
+
+        <br><br> Aside from the digital world, I’m dedicated to maintaining a healthy, active lifestyle. Fitness is my way to stay balanced—physically and mentally. Whether it's hitting the gym for strength training or participating in outdoor activities, staying fit helps me maintain energy, focus, and motivation for both my professional and personal goals. I believe in the importance of mental health as much as physical health, and fitness is a powerful tool to keep both in check.
+
+        <br><br> When I’m not coding, gaming, or working out, you’ll find me exploring new hobbies, watching anime, and connecting with others who share my passions. I'm always eager to collaborate on tech projects, engage in meaningful discussions, and expand my horizons through learning.</p>
+</div>
+</div>
+</section>
+
+<!-- education section design -->
+<section class="education" id="Education"> 
+<h2 class="heading"> Education </h2>
+
+<div class="timeline-educs">
+
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+            <div class="timeline-date"> 2016 - <span>2020 </span></div>
+                <div class="timeline-content"> 
+                    <h3>Junior High School </h3>
+                    <h5> Mauaque Resettlement High School </h5>
+                </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+            <div class="timeline-date"> 2020 - <span>2022</span> </div>
+                <div class="timeline-content"> 
+                    <h3>Senior High School </h3>
+                    <h5> Angeles University Integrated School </h5>
+                    <p> Strand:     Information Technology,Engineering and Architecture (IEA) </p>
+                </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+            <div class="timeline-date"> 2022 - <span>2024</span> </div>
+                <div class="timeline-content"> 
+                    <h3>University - Undergraduate</h3>
+                    <h5> Angeles University Foundation </h5>
+                    <p> College of Business and Accountancy</p>
+                    <p> Course: Bachelor of Science in Accountancy</p>
+                </div>
+    </div>
+
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+            <div class="timeline-date"> 2024 -<span> Present</span> </div>
+                <div class="timeline-content"> 
+                    <h3>University - Undergraduate</h3>
+                    <h5> Angeles University Foundation </h5>
+                    <p> College of Computer Sciences</p>
+                    <p> Course: Bachelor of Science in Information Technology</p>
+                </div>
+    </div>
+
+</div>
+</section>
+
+<!-- skill section design -->
+<section class="skill" id="Skills">
+<h2 class="heading"> My <span> Skills</span></h2>
+
+<div class="skills-row">
+    <div class="skills-column">
+        <h3 class="title"> Coding Skills </h3>
+
+        <div class="skills-box">
+            <div class="skills-content">
+                <div class="progress">
+                <h3> HTML <span> 96% </span></h3>
+                <div class="bar"><span></span></div>
+            </div>
+
+            <div class="progress">
+                <h3> CSS <span> 80% </span></h3>
+                <div class="bar"><span></span></div>
+            </div>
+
+            <div class="progress">
+                <h3> JavaScript <span> 50% </span></h3>
+                <div class="bar"><span></span></div>
+            </div>
+
+            <div class="progress">
+                <h3> Java <span> 95% </span></h3>
+                <div class="bar"><span></span></div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="skills-column">
+        <h3 class="title"> Other Professional Skills </h3>
+
+        <div class="skills-box">
+            <div class="skills-content">
+                <div class="progress">
+                <h3> Networking <span> 90% </span></h3>
+                <div class="bar"><span></span></div>
+            </div>
+
+            <div class="progress">
+                <h3> Graphic Design <span> 30% </span></h3>
+                <div class="bar"><span></span></div>
+            </div>
+
+            <div class="progress">
+                <h3> Accounting <span> 60% </span></h3>
+                <div class="bar"><span></span></div>
+            </div>
+
+            <div class="progress">
+                <h3> Web Design <span> 80% </span></h3>
+                <div class="bar"><span></span></div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- experience section design -->
+<section class="experience" id="Experience">
+<h2 class="heading"> Experience </h2>
+
+<div class="experience1">
+    <div class="experience-box">
+        <div class="experience-content">
+            <div class="year"><i class='bx bx-calendar'></i>  08/2020 - 12/2024</div>
+            <h3> Content Creator Crew -  <a href="https://gw.joycity.com/en" style="color: red;"> Gunship Battle Total Warfare</a></h3>
+            <p> - Maintain high productivity by effectively managing team, content quality, and high ratings. 
+                <br>- Team Manager in-game </p>
+        </div>
+
+        <div class="experience-content">
+            <div class="year"><i class='bx bx-calendar'></i>  01/2019 - 06/2019</div>
+            <h3> Barangay Secretary Assistant </h3>
+            <p> -  Assisting Secretary with their workloads. 
+               <br>- Reporting on annual budgets, payroll and receipts issued.</p>
+        </div>
+
+
+    </div>
+</div>
+</section>
+
+<!-- interest section design -->
+<section class="interest" id="Interest">
+    <h2 class="heading"> My <span>Interest</span></h2>
+      <h3 class="interest-content">Hobbies</h3>
+      
+      <div class="gallery">
+        <div class="gallery-container">
+          <img class="gallery-item gallery-item-1" src="picture11.jpg" data-index="1" alt="Image 1">
+          <img class="gallery-item gallery-item-2" src="picture12.jpg" data-index="2" alt="Image 2">
+          <img class="gallery-item gallery-item-3" src="picture13.jpg" data-index="3" alt="Image 3">
+          <img class="gallery-item gallery-item-4" src="picture14.jpg" data-index="4" alt="Image 4">
+          <img class="gallery-item gallery-item-5" src="picture15.jpg" data-index="5" alt="Image 5">
+        </div>
+        <div class="gallery-controls">
+          <!-- Buttons will be dynamically added here -->
+        </div>
+      </div>
+
+
+      <h3 class="interest-content2">Personal Interest </h3>
+      <div class="gallery2">
+        <div class="gallery2-container">
+          <img class="gallery2-item gallery2-item-1" src="picture16.jpg" data-index="1" alt="Image 1">
+          <img class="gallery2-item gallery2-item-2" src="picture17.jpg" data-index="2" alt="Image 2">
+          <img class="gallery2-item gallery2-item-3" src="picture18.jpg" data-index="3" alt="Image 3">
+          <img class="gallery2-item gallery2-item-4" src="picture19.jpg" data-index="4" alt="Image 4">
+          <img class="gallery2-item gallery2-item-5" src="picture20.jpg" data-index="5" alt="Image 5">
+        </div>
+        <div class="gallery2-controls">
+          <!-- Buttons will be dynamically added here -->
+        </div>
+      </div>
+</section>
+  
+<!-- contact section design-->
+<section class="contact" id="Contact">
+<h2 class="heading"> Contact <span>Me!</span></h2>
+
+<div class="contact-div">
+<div class="contact-logo">
+    <h2> "Knowing yourself is the beginning of wisdom. It is the key to unlocking your full potential, for when you understand who you truly are, you are no longer bound by the expectations or opinions of others. You can begin to live authentically, making choices that align with your values, passions, and purpose. Self-awareness allows you to embrace both your strengths and weaknesses with grace, giving you the courage to grow and the wisdom to navigate life’s challenges. The journey to self-discovery is not always easy, but it is the most rewarding path you can take, for in understanding yourself, you find the power to shape your own destiny."
+        
+
+</div>
+
+<form action="#">
+<div class="input-field">
+    <input type="text" placeholder="Full Name" required>
+    <span class="focus"></span><br>
+    <input type="text" placeholder="Email Address" required>
+    <span class="focus"></span><br>
+    <input type="text" placeholder="Contact Information" required>
+    <span class="focus"></span><br>
+    <input type="text" placeholder="Email Subject" required>
+    <span class="focus"></span><br>
+
+    <textarea name="" id="" placeholder="Your Message" required></textarea>
+    <span class="focus"></span>
+    <br>
+
+    <button type="submit" class="btn"> Submit </button>
+</div>   
+</form>
+</div>
+</section>
+  
+<footer class="footer">
+    <div class="social">
+        <a href="https://www.facebook.com/profile.php?id=100092584627792"><i class='bx bxl-facebook'></i></a>
+        <a href="https://www.instagram.com/eternalmatrix01/"><i class='bx bxl-instagram'></i></a>
+        <a href="Wa.me/9565231702"><i class='bx bxl-whatsapp' ></i></a>
+        <a href="https://discord.gg/qhFWnrJx"><i class='bx bxl-discord'></i></a>
+        <a href="t.me/Jiyon2403"><i class='bx bxl-telegram'></i></a>
+    </div>
+
+    <ul class="list">
+        <li>
+            <a href="#"> FAQ </a>
+        </li>
+        
+        <li>
+            <a href="#About"> About Me </a>
+        </li>
+
+        <li>
+            <a href="#Contact"> Contact </a>
+        </li>
+    </ul>
+<p class="copyright">
+    © James Andrei Sarno | All Rights Reserved
+</p>
+
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
